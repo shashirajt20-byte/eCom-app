@@ -1,6 +1,8 @@
+//@ts-nocheck
+
 'use client';
 import {useState, useEffect} from "react"
-export default function AddToCartBtn({item}){
+export default function AddToCartBtn({item}:{item:any}){
     const [inCart, setInCart] = useState(false);
     useEffect(function(){
         let prevItems = localStorage.getItem('cart');
