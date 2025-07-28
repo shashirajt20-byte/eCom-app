@@ -1,0 +1,28 @@
+*{
+  margin:0;
+  padding:0;
+  
+}
+header{
+  background-color: rgb(38, 38, 81);
+  display: flex;
+  justify-content: space-between;
+  height:70px;
+  align-items: center;
+  color: white;
+  padding:0px 20px
+}
+
+footer{
+  
+  background-color: rgb(97, 97, 153);
+  text-align: center;
+}
+#productbox{
+  background-color: white;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+#aboutbox{
+  background-color: rgb(212, 210, 210);
+}
