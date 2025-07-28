@@ -3,7 +3,6 @@
 
 import { Suspense } from 'react';
 import ItemCard from '../components/ItemCard';
-import { Suspense } from 'react';
 
 
 export default function Home(){
