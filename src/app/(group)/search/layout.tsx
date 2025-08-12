@@ -27,7 +27,7 @@ export default function Layout({ children }) {
     function handleGo() {
         let url = "/search?";
         if (searchTerm) {
-            url = url + "&n=" + searchTerm
+            url = url + "&n=" + searchTerm;
         }
         if (min) {
             url = url + "&min=" + min;

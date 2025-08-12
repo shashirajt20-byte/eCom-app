@@ -1,6 +1,6 @@
 //@ts-nocheck
 import ItemCard from '@/app/components/ItemCard';
-// import products from "@/app/constants/data";                     // fetching data from the database.
+
 import { wrap } from 'module';
 
 export function generateMetadata({ searchParams }) {
@@ -13,29 +13,24 @@ export function generateMetadata({ searchParams }) {
 
 export default async function Page({ searchParams }) {
 
-    // fetching search data from api
+   
     const query = searchParams.n?.toLowerCase() || "";
     let data;
     try {
         const url = 'https://dummyjson.com/products/search?q=' + query;
         const response = await fetch(url);
-        const data = await response.json();
+         data = await response.json();
     } catch (err) {
 
     }
     let results = data?.products;
 
-    // filtering the searh item
+
     const min = searchParams.min;
     const max = searchParams.max;
     const rating = searchParams.rating;
 
-    // let results=products.filter(function(item){
-    //     if(item.title.toLowerCase().includes(query)){
-    //         return true;
-    //     }
 
-    // })
     if (min) {
         results = results.filter(function (item) {
             if (item.price > min) return true;
@@ -62,13 +57,13 @@ export default async function Page({ searchParams }) {
                     gap: "20px"
                 }}>
                     {
-                        results.length == 0 &&
+                        results?.length == 0 &&
                         <div>
                             <h2>No search results are found for: {query}</h2>
                         </div>
                     }
                     {
-                        results.map(function (item) {                                            // maping products on the screen
+                        results?.map(function (item) {
                             return <ItemCard key={item.id} item={item} />
                         })
                     }
